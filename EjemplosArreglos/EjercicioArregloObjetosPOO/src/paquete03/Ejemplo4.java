@@ -8,7 +8,7 @@ package paquete03;
 import paquete01.Calificacion;
 import paquete01.Profesor;
 
-public class Ejemplo {
+public class Ejemplo4 {
 
     public static void main(String[] args) {
         // crear un arreglo de objetos de tipo Calificacion
@@ -16,18 +16,25 @@ public class Ejemplo {
         Profesor profesor2 = new Profesor("Richard", "contrato");
         Calificacion[] calificaciones = new Calificacion[2];
 
-        Calificacion c = new Calificacion(10, "Computación");
-        Calificacion c2 = new Calificacion(9, "Electrónica");
+        Calificacion c = new Calificacion(10, "Computación", profesor1);
+        Calificacion c2 = new Calificacion(9, "Electrónica", profesor2);
 
         calificaciones[0] = c;
         calificaciones[1] = c2;
 
         for (int i = 0; i < calificaciones.length; i++) {
             Calificacion objetoCalificacion = calificaciones[i];
-            System.out.printf("%s - %.2f - %s",
+            
+            
+
+            System.out.printf("%s - %.2f - %s \n",
                     objetoCalificacion.obtenerNombreMateria(),
                     objetoCalificacion.obtenerNota(),
-                    objetoCalificacion.obtenerProfesor());
+                    objetoCalificacion.obtenerProfesor().obtenerNombre());
+            /*En la instancia calificacion se creo un constructor que resiva 3
+            parametros entre ellos uno de tipo Profesor en esta instacia se creo
+            2 objetos */
+            
         }
 
     }
